@@ -1,23 +1,27 @@
 # Apache Shiro tags for Freemarker
 
-[Apache Shiro](http://shiro.apache.org/) comes with some [handy JSP tags](http://shiro.apache.org/jsp-tag-library.html) for doing things like only showing content for anonymous users, logged in users, etc... I'm using [Freemarker](http://freemarker.sourceforge.net/) and didn't want to take a dependency on JSP just for Shiro, so I rewrote the tags for Freemarker.
+本项目是基于 [shiro-freemarker-tags](https://github.com/jagregory/shiro-freemarker-tags)，由于在maven中心库里面没有找到，所以fork了过来，同时对项目进行了jar版本的升级，便于后面的开发。
 
-## Install
+## 更新
 
-Either download the [dist/shiro-freemarker-tags-0.1-SNAPSHOT.jar](/jagregory/shiro-freemarker-tags/raw/master/dist/shiro-freemarker-tags-0.1-SNAPSHOT.jar) or take all the java files and stick them in your project. Simple.
+2017-03-04 项目初始化，并升级依赖的2个jar版本。
 
-If there's enough demand, I could put this up on Maven.
+## 使用
 
-## Usage
+下载  dist/shiro-freemarker-tags-1.0.0.jar 这个jar放到你的项目里面（注意：该jar是使用jdk8进行打包，如果出现兼容性问题，请使用自己的jdk版本进行打包）
 
-Declare a shared variable called "shiro", and assign it to an instance of the ShiroTags class.
+定义一个变量 "shiro", 然后把 ShiroTags这个实例放入去
 
     cfg.setSharedVariable("shiro", new ShiroTags());
 
-You should then be able to use the tags in your Freemarker templates.
+在你的Freemarker模板就可以使用
 
     <@shiro.guest>Hello guest!</@shiro.guest>
 
 ## License
 
 Do what you want with it, just don't blame me if it breaks anything.
+
+## 说明
+
+

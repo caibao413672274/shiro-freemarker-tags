@@ -1,4 +1,4 @@
-package com.jagregory.shiro.freemarker;
+package com.roncoo.shiro.freemarker;
 
 import freemarker.core.Environment;
 import freemarker.template.*;
