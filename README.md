@@ -1,6 +1,6 @@
 # Apache Shiro tags for Freemarker
 
-本项目是基于 [shiro-freemarker-tags](https://github.com/jagregory/shiro-freemarker-tags)，由于在maven中心库里面没有找到，所以fork了过来，同时对项目进行了jar版本的升级，便于后面的开发。
+本项目是基于 [shiro-freemarker-tags](https://github.com/jagregory/shiro-freemarker-tags)，由于在maven中央库里面没有找到，所以fork了过来，同时对项目进行了jar版本的升级，便于后面的开发。
 
 ## 更新
 
@@ -21,7 +21,3 @@
 ## License
 
 Do what you want with it, just don't blame me if it breaks anything.
-
-## 说明
-
-
