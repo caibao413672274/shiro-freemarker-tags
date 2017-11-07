@@ -3,14 +3,45 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>shiro-freemarker-tags</artifactId>
 	<groupId>com.roncoo</groupId>
+	<artifactId>shiro-freemarker-tags</artifactId>
 	<version>1.0.0</version>
 
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>roncoo open source</description>
+	<url>https://github.com/roncoo/shiro-freemarker-tags</url>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	
+	<scm>
+        <connection>scm:git:https://github.com/roncoo/shiro-freemarker-tags.git</connection>
+        <developerConnection>scm:git:https://github.com/roncoo/shiro-freemarker-tags.git</developerConnection>
+        <url>https://github.com/roncoo/shiro-freemarker-tags</url>
+        <tag>v${project.version}</tag>
+    </scm>
+
 	<organization>
-		<name>龙果学院</name>
+		<name>LingKe, Co., Ltd.</name>
 		<url>http://www.roncoo.com</url>
 	</organization>
+
+	<developers>
+		<developer>
+			<name>fengyongwei</name>
+			<email>fengyw@roncoo.com</email>
+			<organization>LingKe, Co., Ltd.</organization>
+			<organizationUrl>http://www.roncoo.com</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -43,17 +74,60 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
+
+			<!-- Source -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<executions>
 					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Javadoc -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
 						<goals>
 							<goal>jar</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- GPG -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>oss-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>oss-maven2</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 </project>
