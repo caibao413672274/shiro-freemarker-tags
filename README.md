@@ -8,6 +8,7 @@
 
 ## 使用
 ### 方法1：使用maven
+
 ```
 <!-- https://mvnrepository.com/artifact/com.roncoo/shiro-freemarker-tags -->
 <dependency>
@@ -15,8 +16,8 @@
     <artifactId>shiro-freemarker-tags</artifactId>
     <version>1.0.0</version>
 </dependency>
-
 ```
+
 ### 方法2：jar下载
 下载  dist/shiro-freemarker-tags-1.0.0.jar 这个jar放到你的项目里面（注意：该jar是使用jdk8进行打包，如果出现兼容性问题，请使用自己的jdk版本进行打包）
 
@@ -24,14 +25,12 @@
 
 ```
 cfg.setSharedVariable("shiro", new ShiroTags());
-
 ```
 
 在你的Freemarker模板就可以使用
 
 ```
 <@shiro.guest>Hello guest!</@shiro.guest>
-
 ```
 
 ## License
